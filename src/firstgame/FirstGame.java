@@ -5,17 +5,36 @@
  */
 package firstgame;
 
+import java.awt.*;
+import javax.swing.*;
+
 /**
  *
- * @author MoNoQLoREATOR
+ * @author yuni-net
  */
-public class FirstGame {
+public class FirstGame extends JFrame {
+    
+    public FirstGame() {
+        setTitle("first_test");
+        setResizable(false);
+        
+        MainPanel panel = new MainPanel();
+        panel.init();
+        
+        Container contentPane = getContentPane();
+        contentPane.add(panel);
+        
+        pack(); // フレームサイズを自動調整
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        FirstGame frame = new FirstGame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
     
 }
